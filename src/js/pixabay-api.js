@@ -42,7 +42,7 @@ axios.defaults.params = {
   orientation: 'horizontal',
   safesearch: true,
 };
-
+//  GET-запит до кореневого шляху ('')
 export async function getImagesByQuery(query) {
   const response = await axios.get('', { params: { q: query } });
   return response.data.hits;
