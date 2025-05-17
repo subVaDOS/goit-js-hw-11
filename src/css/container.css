@@ -1,37 +1,45 @@
+/* Контейнер для центрування контенту з адаптивною шириною */
 .container {
-  min-width: 320px;
-  max-width: 375px;
-  margin: 0 auto;
+  min-width: 320px; /* Мінімальна ширина — для мобільних */
+  max-width: 375px; /* Стандартна ширина для мобільних */
+  margin: 0 auto; /* Центрування по горизонталі */
 }
-/* Styles for Tablet devices */
+
+/* Ширина контейнера для планшетів */
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 }
-/* Styles for Desktop devices */
+
+/* Ширина контейнера для десктопів */
 @media only screen and (min-width: 1128px) {
   .container {
     max-width: 1128px;
   }
 }
+
+/* Застосування універсальної моделі коробки до всіх елементів */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Стилізація анімаційного лоадера */
 .loader {
-  transform: rotateZ(45deg);
-  perspective: 1000px;
-  border-radius: 50%;
+  transform: rotateZ(45deg); /* Поворот для 3D-ефекту */
+  perspective: 1000px; /* Глибина перспективи */
+  border-radius: 50%; /* Коло */
   width: 70px;
   height: 70px;
-  color: #5779a7;
+  color: #5779a7; /* Початковий колір */
 }
+
+/* Псевдоелементи лоадера для анімації */
 .loader:before,
 .loader:after {
-  content: '';
+  content: ''; /* Порожній контент */
   display: block;
   position: absolute;
   top: 0;
@@ -39,15 +47,18 @@
   width: inherit;
   height: inherit;
   border-radius: 50%;
-  transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
-}
-.loader:after {
-  color: #b460b8;
-  transform: rotateY(70deg);
-  animation-delay: 0.4s;
+  transform: rotateX(70deg); /* Поворот по X */
+  animation: 1s spin linear infinite; /* Анімація обертання */
 }
 
+/* Другий псевдоелемент лоадера з іншою анімацією */
+.loader:after {
+  color: #b460b8; /* Інший колір */
+  transform: rotateY(70deg); /* Поворот по Y */
+  animation-delay: 0.4s; /* Затримка анімації */
+}
+
+/* Анімація обертання за годинниковою стрілкою */
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotateZ(0deg);
@@ -57,6 +68,7 @@
   }
 }
 
+/* Анімація обертання проти годинникової стрілки */
 @keyframes rotateccw {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -66,6 +78,7 @@
   }
 }
 
+/* Анімація спалаху точок по колу */
 @keyframes spin {
   0%,
   100% {
@@ -94,22 +107,23 @@
   }
 }
 
+/* Клас для приховання елемента */
 .is-hidden {
   display: none;
 }
 
-/* Gallery */
-
+/* Галерея зображень — флекс-контейнер */
 .gallery {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Перенос елементів */
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 24px; /* Відстань між зображеннями */
   padding: 24px 0;
 }
 
+/* Обгортка для форми — центрування і відступ */
 .wrapper-form {
   margin-top: 25px;
   display: flex;
@@ -117,6 +131,7 @@
   gap: 8px;
 }
 
+/* Стилізація поля вводу */
 input {
   border: 1px solid #808080;
   border-radius: 4px;
@@ -124,6 +139,7 @@ input {
   padding: 8px 16px;
 }
 
+/* Стилі для плейсхолдера */
 input::placeholder {
   font-weight: 400;
   font-size: 16px;
@@ -132,6 +148,7 @@ input::placeholder {
   color: #808080;
 }
 
+/* Стилізація кнопки */
 button {
   border-radius: 8px;
   border: none;
@@ -141,10 +158,12 @@ button {
   color: whitesmoke;
 }
 
+/* Ефект наведення на кнопку */
 button:hover {
   background: #6c8cff;
 }
 
+/* Стилі для окремого елементу галереї */
 .gallery-item {
   width: 360px;
   height: 200px;
@@ -153,23 +172,30 @@ button:hover {
   margin: 0;
   padding: 0;
 }
+
+/* Посилання на велике зображення — займає всю ширину/висоту item'а */
 .js-gallery-link {
   display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
 }
+
+/* Обгортка для зображення */
 .image-wrapper {
   width: 100%;
   height: 152px;
 }
+
+/* Зображення в галереї */
 .js-gallery-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* Заповнення без викривлення */
+  object-position: center; /* Центрування */
 }
 
+/* Контейнер для мета-інформації про зображення */
 .wrapper-box {
   display: flex;
   justify-content: center;
@@ -179,12 +205,14 @@ button:hover {
   height: 48px;
 }
 
+/* Окрема мета-інформація: лайки, перегляди тощо */
 .list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Заголовок значення (наприклад "Likes") */
 .value-title {
   font-weight: 600;
   font-size: 12px;
@@ -193,6 +221,7 @@ button:hover {
   color: #2e2f42;
 }
 
+/* Значення підпису (наприклад кількість) */
 .label {
   font-weight: 400;
   font-size: 12px;
@@ -201,12 +230,13 @@ button:hover {
   color: #2e2f42;
 }
 
+/* Контейнер лоадера — фіксований по центру екрану */
 .loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  pointer-events: none;
+  pointer-events: none; /* Не заважає клікам */
   top: 0;
   right: 0;
   left: 0;
