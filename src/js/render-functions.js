@@ -1,11 +1,15 @@
+// Імпортуємо бібліотеку SimpleLightbox для модального перегляду зображень
 import SimpleLightbox from 'simplelightbox';
+
+// Імпортуємо стилі бібліотеки SimpleLightbox
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+// Створюємо новий екземпляр lightbox для всіх посилань у галереї
 const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 200,
+  captionsData: 'alt', // Підписи зображень беруться з атрибута alt
+  captionDelay: 200, // Затримка 200 мс перед показом підпису
 });
-
+// Експорт функції створення галереї
 export function createGallery(images, galleryElem) {
   const markup = images
     .map(
@@ -54,18 +58,25 @@ export function createGallery(images, galleryElem) {
 </li>`
     )
     .join('');
+
+  // Додаємо HTML до елемента галереї
   galleryElem.insertAdjacentHTML('beforeend', markup);
+  // Оновлюємо lightbox, щоб підхопив нові елементи
   lightbox.refresh();
 }
 
+// Експортуємо функцію очищення галереї
 export function clearGallery(galleryElem) {
+  // Очищаємо вміст елемента галереї
   galleryElem.innerHTML = '';
 }
-
+// Експортуємо функцію показу лоадера
 export function showLoader(loaderElem) {
+  // Видаляємо клас, що приховує лоадер
   loaderElem.classList.remove('is-hidden');
 }
-
+// Експортуємо функцію приховування лоадера
 export function hideLoader(loaderElem) {
+  // Додаємо клас, що приховує лоадер
   loaderElem.classList.add('is-hidden');
 }
