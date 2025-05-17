@@ -1,7 +1,9 @@
+// Імпорт бібліотеки axios для виконання HTTP-запитів
 import axios from 'axios';
-
+// Базова адреса API Pixabay
 const BASE_URL = 'https://pixabay.com/api/';
-const API_KEY = '';
+// API-ключ для доступу до Pixabay API
+const API_KEY = '50348782-72c1d2cf6f33e6e33f09bb691';
 
 axios.defaults.baseURL = BASE_URL;
 axios.defaults.params = {
