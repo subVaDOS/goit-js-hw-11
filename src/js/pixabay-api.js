@@ -1,5 +1,34 @@
 // Імпорт бібліотеки axios для виконання HTTP-запитів
 import axios from 'axios';
+
+// const API_KEY = '50348782-72c1d2cf6f33e6e33f09bb691';
+// const BASE_URL = 'https://pixabay.com/api/';
+
+// /**
+//  * Отримує масив зображень з Pixabay.
+//  * @param {string} query - Пошукове слово
+//  * @returns {Promise<Array>} - Масив об'єктів зображень (hits)
+//  */
+// export async function getImagesByQuery(query) {
+//   const searchParams = new URLSearchParams({
+//     key: API_KEY,
+//     q: query,
+//     image_type: 'photo',
+//     orientation: 'horizontal',
+//     safesearch: 'true',
+//   });
+
+//   const url = `${BASE_URL}?${searchParams.toString()}`;
+
+//   try {
+//     const response = await axios.get(url);
+//     return response.data.hits;
+//   } catch (error) {
+//     console.error('❌ Запит не вдався:', error.message);
+//     throw error;
+//   }
+// }
+
 // Базова адреса API Pixabay
 const BASE_URL = 'https://pixabay.com/api/';
 // API-ключ для доступу до Pixabay API
