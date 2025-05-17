@@ -45,5 +45,6 @@ axios.defaults.params = {
 //  GET-запит до кореневого шляху ('')
 export async function getImagesByQuery(query) {
   const response = await axios.get('', { params: { q: query } });
-  return response.data.hits;
+
+  return response.data.hits; // Повертаємо масив зображень із відповіді (тільки hits)
 }
